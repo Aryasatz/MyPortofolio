@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryasatya | Narrative Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  </head>
+  <body>
+    <div class="cursor-follower"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <main id="main-container">
+      <section class="scene" id="scene-1">
+        <div class="content">
+          <p class="sub-text">01. Prologue</p>
+          <h1 class="hero-text">
+            Membangun dunia melalui baris kode dan ritme.
+          </h1>
+          <p class="scroll-hint">Scroll untuk melihat narasi</p>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-2">
+        <div class="content profile-box">
+          <p class="sub-text">02. The Architect</p>
+          <h2 class="name-display">
+            Aryasatya <span class="accent">N. Utama</span>
+          </h2>
+          <div class="bio-grid">
+            <div class="bio-item">
+              <span class="label">Identitas</span>
+              <p>
+                Dikenal sebagai <strong>Arya</strong>. Lahir di Bogor, 22
+                Oktober 2010.
+              </p>
+            </div>
+            <div class="bio-item">
+              <span class="label">Dunia</span>
+              <p>
+                Menjelajahi <strong>Programming</strong>, alunan
+                <strong>Musik</strong>, dan <strong>Kehidupan</strong>.
+              </p>
+            </div>
+          </div>
+          <p class="quote">
+            "Menerjemahkan algoritma menjadi estetika, seperti melodi yang
+            tersusun rapi."
+          </p>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-3">
+        <div class="content">
+          <p class="sub-text">03. Artifacts</p>
+          <h2 class="section-title">Eksplorasi Digital</h2>
+          <div class="project-grid">
+            <div class="project-item interactive-card" data-type="audio">
+              <div class="image-placeholder">
+                <i class="fa-solid fa-book"></i>
+              </div>
+              <h3>Web Perpustakaan</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam
+                excepturi, eum quis commodi quibusdam facere quaerat enim neque
+                tenetur, dolor mollitia quia numquam inventore et ipsam corrupti
+                voluptates, doloribus accusantium..
+              </p>
+              <a
+                href="https://link-projek-perpustakaan.com"
+                class="btn-project"
+                target="_blank"
+                >Lihat Projek</a
+              >
+            </div>
+
+            <div class="project-item interactive-card" data-type="web">
+              <div class="image-placeholder">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3>Web Jadwal Sholat</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                eligendi eaque quasi reiciendis dolorum molestiae, nobis numquam
+                fugiat at doloribus, ab non quidem voluptas voluptatem soluta
+                iure saepe accusamus veritatis?.
+              </p>
+              <a
+                href="https://aryasatz.github.io/Jadwal-sholat-binaqurani/"
+                class="btn-project"
+                target="_blank"
+                >Lihat Projek</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-4">
+        <div class="content">
+          <p class="sub-text">04. Mastery</p>
+          <h2>Tech & Beats</h2>
+          <div class="skills-icons">
+            <div class="skill-card">
+              <i class="fa-brands fa-python"></i><span>Python</span>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-gears"></i><span>Mechanics</span>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-microchip"></i><span>Logic</span>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-music"></i><span>Acoustics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-5">
+        <div class="content">
+          <p class="sub-text">05. The Goal</p>
+          <h2>Future Milestones</h2>
+          <div class="milestone-container">
+            <div class="milestone-card">
+              <span class="year">2026</span>
+              <p>Memasuki gerbang SMA.</p>
+            </div>
+            <div class="milestone-card highlight">
+              <span class="year">Goal</span>
+              <p>MacBook Pro Graduation Project.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-6">
+        <div class="content">
+          <h2 class="hero-text">
+            Mari berkolaborasi menciptakan harmoni baru.
+          </h2>
+          <a
+            href="https://www.instagram.com/onceuponaphamz/"
+            class="cta-button magnetic"
+            target="_blank"
+            >Sapa Arya di Sini</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <div class="preview-overlay" id="previewOverlay">
+      <div class="preview-box">
+        <div class="preview-visual" id="pVisual"></div>
+        <div class="preview-text">
+          <h4 id="pTitle">Title</h4>
+          <p id="pDesc">Description</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

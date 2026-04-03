@@ -1,0 +1,111 @@
+:root {
+    --bg-color: #0a0a0a;
+    --accent-color: #00f2ff;
+    --text-main: #ffffff;
+    --text-dim: #888888;
+    --font-header: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    touch-action: none; overflow: hidden; 
+}
+
+* { cursor: none; box-sizing: border-box; }
+
+#particleCanvas {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3;
+}
+
+.cursor-follower {
+    width: 15px; height: 15px; background-color: var(--accent-color);
+    border-radius: 50%; position: fixed; pointer-events: none;
+    z-index: 9999; mix-blend-mode: difference;
+}
+
+.progress-container { position: fixed; top: 0; width: 100%; height: 4px; z-index: 1000; }
+.progress-bar { height: 100%; background: var(--accent-color); width: 0%; transition: width 0.3s ease; }
+
+.scene {
+    height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center; padding: 0 10%;
+    background: radial-gradient(circle at center, #111 0%, #0a0a0a 100%);
+}
+
+.content { width: 100%; max-width: 900px; text-align: center; }
+
+h1 { font-family: var(--font-header); font-size: clamp(1.8rem, 5vw, 3.5rem); margin-bottom: 20px; }
+h2 { font-family: var(--font-header); font-size: 2.8rem; margin-bottom: 20px; }
+.accent { color: var(--accent-color); }
+.sub-text { color: var(--accent-color); letter-spacing: 5px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; }
+
+.bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; text-align: left; }
+.bio-item .label { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px; letter-spacing: 2px; }
+.bio-item p { font-size: 1.1rem; line-height: 1.5; color: #ccc; }
+
+.quote { font-style: italic; color: var(--text-dim); border-left: 2px solid var(--accent-color); padding-left: 20px; display: inline-block; margin-top: 20px; }
+
+.project-grid { display: flex; gap: 20px; margin-top: 40px; perspective: 1000px; }
+.project-item { 
+    flex: 1; padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); 
+    text-align: left; transition: 0.4s; position: relative;
+}
+.project-item:hover { transform: translateZ(20px); border-color: var(--accent-color); background: rgba(0, 242, 255, 0.05); }
+.image-placeholder { height: 100px; background: #111; border: 1px dashed var(--accent-color); display: flex; justify-content: center; align-items: center; color: var(--accent-color); margin-bottom: 15px; font-size: 1.5rem; }
+
+/* Skills Icons */
+.skills-icons { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+.skill-card { display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--text-dim); transition: 0.3s; opacity: 0; transform: translateY(20px); }
+.skill-card i { font-size: 2.5rem; color: var(--accent-color); }
+
+/* Milestone */
+.milestone-container { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+.milestone-card { padding: 25px; border: 1px solid #333; width: 220px; }
+.milestone-card.highlight { border-color: var(--accent-color); background: rgba(0,242,255,0.02); }
+.year { font-weight: bold; color: var(--accent-color); display: block; margin-bottom: 8px; }
+
+/* Floating Preview Overlay */
+.preview-overlay {
+    position: fixed; pointer-events: none; opacity: 0; z-index: 5000;
+    transition: opacity 0.3s; transform: translate(20px, -50%);
+}
+.preview-box {
+    width: 280px; background: rgba(10,10,10,0.95); border: 1px solid var(--accent-color);
+    backdrop-filter: blur(10px); border-radius: 8px; overflow: hidden;
+}
+.preview-visual { height: 120px; background: #111; }
+.preview-text { padding: 15px; }
+.preview-text h4 { margin: 0 0 5px; color: var(--accent-color); font-size: 0.9rem; }
+.preview-text p { margin: 0; font-size: 0.75rem; color: #ccc; }
+
+.cta-button {
+    display: inline-block; padding: 15px 40px; border: 1px solid var(--accent-color);
+    color: var(--accent-color); text-decoration: none; font-weight: bold; margin-top: 30px; transition: 0.3s;
+}
+.cta-button:hover { background: var(--accent-color); color: #000; }
+
+.btn-project {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Warna biru, bisa diganti sesuai tema */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-project:hover {
+    background-color: #0056b3; /* Warna sedikit gelap saat kursor di atas tombol */
+}
+
+/* Memastikan konten di dalam card tersusun rapi */
+.interactive-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
